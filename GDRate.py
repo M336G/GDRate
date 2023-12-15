@@ -48,7 +48,7 @@ def main():
             "gdw": 0
         }
         req = requests.post(f'{databaseUrl}requestUserAccess.php', data=data, headers=headers)
-        os.system('cls')
+        os.system('cls' if os.name == 'nt' else 'clear')
         if req.text == "-1":
             print("You are not a Moderator!")
             main()
@@ -68,7 +68,7 @@ def main():
         main()
         
 def rateOrDemonChoice():
-    os.system('cls')
+    os.system('cls' if os.name == 'nt' else 'clear')
     print("\nPress ENTER to go back\n")
     rateOrDemon = input("Do yo want to suggest stars for a level (0) or rate a demon level difficulty (1): ")
     if rateOrDemon == "0":
@@ -82,7 +82,7 @@ def rateOrDemonChoice():
         rateOrDemonChoice()
         
 def suggestStars():
-    os.system('cls')
+    os.system('cls' if os.name == 'nt' else 'clear')
     print("\nPress ENTER to go back\n")
     levelID = input("Level ID: ")
     if levelID == "":
@@ -118,7 +118,7 @@ def suggestStars():
         suggestStars()
 
 def rateDemon():
-    os.system('cls')
+    os.system('cls' if os.name == 'nt' else 'clear')
     print("\nPress ENTER to go back\n")
     levelID = input("Level ID: ")
     if levelID == "":
