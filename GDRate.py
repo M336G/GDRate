@@ -43,8 +43,8 @@ def main():
             "accountID": accountID,
             "gjp": encoded_base64,
             "secret": accessSecret,
-            "gameVersion": 21,
-            "binaryVersion": 35,
+            "gameVersion": 22,
+            "binaryVersion": 38,
             "gdw": 0
         }
         req = requests.post(f'{databaseUrl}requestUserAccess.php', data=data, headers=headers)
@@ -90,7 +90,7 @@ def suggestStars():
     stars = input("Stars: ")
     if stars == "":
         rateOrDemonChoice()
-    feature = input("Feature (0 for no, 1 for yes; default is 0): ")
+    feature = input("Rating (0 for star rate only, 1 for Feature rate, 2 for Epic rate, 3 for Legendary rate, 4 for Mythic rate; default is 0): ")
     if feature == "":
         feature = 0
 
@@ -98,8 +98,8 @@ def suggestStars():
         "User-Agent": ""
     }
     data = {
-        "gameVersion": 21,
-        "binaryVersion": 35,
+        "gameVersion": 22,
+        "binaryVersion": 38,
         "accountID": accountID,
         "gjp": encoded_base64,
         "levelID": levelID,
@@ -131,8 +131,8 @@ def rateDemon():
     }
 
     data = {
-        "gameVersion": 21,
-        "binaryVersion": 35,
+        "gameVersion": 22,
+        "binaryVersion": 38,
         "accountID": accountID,
         "gjp": encoded_base64,
         "secret": modSecret,
