@@ -12,6 +12,8 @@ def main():
     global modSecret
     global accountID
     global encoded_base64
+    global gameVersion
+    global binaryVersion
 
     databaseUrl = "http://www.boomlings.com/database/"
 
@@ -19,6 +21,9 @@ def main():
 
     accessSecret = "Wmfd2893gb7"
     modSecret = "Wmfp3897gc3"
+
+    gameVersion = 22
+    binaryVersion = 41
 
 
     databaseUrlRequest = input(f"Please enter your database URL (Press ENTER to keep '{databaseUrl}'): ")
@@ -43,8 +48,8 @@ def main():
             "accountID": accountID,
             "gjp": encoded_base64,
             "secret": accessSecret,
-            "gameVersion": 22,
-            "binaryVersion": 38,
+            "gameVersion": gameVersion,
+            "binaryVersion": binaryVersion,
             "gdw": 0
         }
         req = requests.post(f'{databaseUrl}requestUserAccess.php', data=data, headers=headers)
@@ -98,8 +103,8 @@ def suggestStars():
         "User-Agent": ""
     }
     data = {
-        "gameVersion": 22,
-        "binaryVersion": 38,
+        "gameVersion": gameVersion,
+        "binaryVersion": binaryVersion,
         "accountID": accountID,
         "gjp": encoded_base64,
         "levelID": levelID,
@@ -131,8 +136,8 @@ def rateDemon():
     }
 
     data = {
-        "gameVersion": 22,
-        "binaryVersion": 38,
+        "gameVersion": gameVersion,
+        "binaryVersion": binaryVersion,
         "accountID": accountID,
         "gjp": encoded_base64,
         "secret": modSecret,
