@@ -15,7 +15,7 @@ def main():
     global gameVersion
     global binaryVersion
 
-    databaseUrl = "http://www.boomlings.com/database/"
+    databaseUrl = "https://www.boomlings.com/database/"
 
     xorKey = "37526"
 
